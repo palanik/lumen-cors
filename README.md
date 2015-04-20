@@ -6,20 +6,40 @@ Lumen-CORS
 [![Latest Stable Version](https://poser.pugx.org/palanik/lumen-cors/v/stable.svg)](https://packagist.org/packages/palanik/lumen-cors)
 [![License](https://poser.pugx.org/palanik/lumen-cors/license.svg)](https://github.com/palanik/lumen-cors/blob/master/LICENSE)
 
-## Installation & Usage ##
+## Installation ##
 
 After you install lumen as per [lumen docs](http://lumen.laravel.com/docs/installation#install-lumen), install lumen-cors from `lumen` folder.
 
 ### Install with [Composer](https://packagist.org/packages/palanik/lumen-cors) ###
-1. Run `composer require "palanik/lumen-cors:dev-master"` to install lumen-cors.
-2. List the middleware class `palanik\lumen\Middleware\LumenCors` in the `$app->middleware()` call of your `bootstrap/app.php` file. 
 
-More info. - http://lumen.laravel.com/docs/middleware#registering-middleware
+Run `composer require "palanik/lumen-cors:dev-master"` to install lumen-cors.
 
 ### Manual Installation ###
 
-1. Copy the file LumenCors.php into `app/Http/Middleware` directory.
-2. List the middleware class `palanik\lumen\Middleware\LumenCors` in the `$app->middleware()` call of your `bootstrap/app.php` file. 
+Copy the file LumenCors.php into `app/Http/Middleware` directory.
+
+## Usage ##
+
+### Global CORS ###
+
+If you want CORS enabled for every HTTP request to your application, simply list the middleware class `palanik\lumen\Middleware\LumenCors` in the $app->middleware() call of your `bootstrap/app.php` file. 
+
+### CORS for Routes ###
+
+If you would like enable CORS to specific routes, you should first assign the `lumen-cors` middleware a short-hand key in your `bootstrap/app.php` file.
+
+```php
+$app->routeMiddleware([
+    'cors' => 'palanik\lumen\Middleware\LumenCors',
+]);
+```
+
+Then, you use the key in the route options array.
+```php
+$app->get('/data', ['middleware' => 'cors', function() {
+    //
+}]);
+```
 
 More info. - http://lumen.laravel.com/docs/middleware#registering-middleware
 
