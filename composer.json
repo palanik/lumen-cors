@@ -18,7 +18,6 @@
         }
     ],
     "require": {
-        "laravel/lumen": ">=5.0.0"
     },
     "autoload": {
         "psr-4": {
