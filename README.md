@@ -26,7 +26,7 @@ If you want CORS enabled for every HTTP request to your application, simply list
 
 ### CORS for Routes ###
 
-If you would like enable CORS to specific routes, you should first assign the `lumen-cors` middleware a short-hand key in your `bootstrap/app.php` file.
+If you would like to enable CORS to specific routes, you should first assign the `lumen-cors` middleware a short-hand key in your `bootstrap/app.php` file.
 
 ```php
 $app->routeMiddleware([
