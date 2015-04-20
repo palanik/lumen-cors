@@ -1,4 +1,4 @@
-<?php namespace App\Http\Middleware;
+<?php namespace palanik\lumen\Middleware;
 
 use Closure;
 use Illuminate\Http\Response;
