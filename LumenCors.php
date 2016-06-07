@@ -7,7 +7,7 @@ class LumenCors {
 
     protected $settings = array(
                 'origin' => '*',    // Wide Open!
-                'allowMethods' => 'GET,HEAD,PUT,POST,DELETE'
+                'allowMethods' => 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
                 );
 
     protected function setOrigin($req, $rsp) {
