@@ -22,8 +22,8 @@ class LumenCors {
     }
 
     protected function setExposeHeaders($req, $rsp) {
-        if (isset($this->settings->exposeHeaders)) {
-            $exposeHeaders = $this->settings->exposeHeaders;
+        if (isset($this->settings['exposeHeaders'])) {
+            $exposeHeaders = $this->settings['exposeHeaders'];
             if (is_array($exposeHeaders)) {
                 $exposeHeaders = implode(", ", $exposeHeaders);
             }
